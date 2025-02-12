@@ -1,0 +1,13 @@
+{% extends 'investimentos/base.html'%}
+{% load crispy_forms_tags %}
+{% block conteudo%}
+<div class="container">
+    <h1>Faça seu Cadastro</h1>
+    <form method='POST'>
+        {% csrf_token %}
+        {{formulario | crispy}}
+        <button class="btn btn-primary" type="submit">Criar novo Usuario</button>
+        <a href="{% url 'login' %}">Ja possuo uma conta</a>
+    </form>
+</div>
+{% endblock %}

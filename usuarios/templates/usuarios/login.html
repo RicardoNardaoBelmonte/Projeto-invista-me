@@ -1,0 +1,15 @@
+{% extends 'investimentos/base.html' %}
+{% load crispy_forms_tags %}  <!-- Carrega as tags do crispy -->
+{% block conteudo %}
+<div class="container" style="padding: 30px;">
+    <h1 class="text-center mb-4">Faça Seu Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}  <!-- Renderiza o formulário com crispy -->
+        <button class="btn btn-primary w-100 mb-3" type="submit">Fazer login</button>
+        <p class="text-center">
+            Ainda não possui uma conta? <a href="{% url 'novo_usuario' %}">Clique aqui</a>
+        </p>
+    </form>
+</div>
+{% endblock %}
